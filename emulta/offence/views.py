@@ -36,7 +36,7 @@ def view(request):
         marker = maps.Marker(opts={'map': gmap, 'position': position})
         maps.event.addListener(marker, 'click', 'toggleinfo')
         tmpl = Template("""{% load oembed_tags %}<div>
-                  {% oembed 480x360 %}{{ o.media_url }}{% endoembed %}</div>""")
+                  {% oembed %}{{ o.media_url }}{% endoembed %}</div>""")
         iw = maps.InfoWindow(opts={'content': tmpl.render(Context({'o': o}))})
         iw.open(gmap, marker)
     fmap = MapForm(initial={'map': gmap})
