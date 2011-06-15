@@ -5,10 +5,47 @@
 
 <form method='post' action="{% url offence_submit %}">
 {% csrf_token %}
-{{ form.as_p }}
-{{ form.media.js }}
+
+<ul class='form'>
+  {{ form.location }}
+  <li class="clear"></li>
+  <li class='input'>
+    {% if form.vehicle_type.errors %}{{ form.vehicle_type.errors }}{% endif %}
+    {{ form.vehicle_type }}
+    <span class="hint">Selecione o tipo de veículo</span>
+  </li>
+  <li class="clear"></li>
+  <li class='input'>
+    {% if form.license_plate.errors %}{{ form.license_plate.errors }}{% endif %}
+    {{ form.license_plate}}
+    <span class="hint">Digite a <strong>placa do veículo</strong></span>
+  </li>
+  <li class="clear"></li>
+  <li class='input'>
+    {% if form.timestamp.errors %}{{ form.timestamp.errors }}{% endif %}
+    {{ form.timestamp }}
+  </li>
+  <li class="clear"></li>
+  <li class='input'>
+    {% if form.media_url.errors %}{{ form.media_url.errors }}{% endif %}
+    {{ form.media_url }}
+    <span class="hint">Cole o endereço para seu video ou foto (<strong>youtube</strong>, <strong>vimeo</strong>, <strong>flickr</strong>, etc)</span>
+  </li>
+  <li class="clear"></li>
+  <li class='input'>
+    {% if form.email.errors %}{{ form.email.errors }}{% endif %}
+    {{ form.email }}
+    <span class="hint">Digite seu <strong>e-mail</strong>. Este campo é opcional, mas dará maior credibilidade à sua denúncia</span>
+  </li>
+  <li class="clear"></li>
+</ul>
+
+<h3>Selecione clicando no mapa o local (aproximado) da ocorrência</h3>
+{{ form.map }}
 
 <input type='submit' value='Enviar' />
 </form>
+
+{{ form.media }}
 
 {% endblock %}

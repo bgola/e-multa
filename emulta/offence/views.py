@@ -16,7 +16,7 @@ def submit(request):
     if form.is_valid():
         form.save()
         return HttpResponseRedirect('/offence/view/')
-    return render_to_response("submit.html", {'form': form}, 
+    return render_to_response("home.html", {'form': form}, 
                             context_instance=RequestContext(request))
 
 @require_GET
@@ -35,8 +35,8 @@ def view(request):
         position = maps.LatLng(*ll)
         marker = maps.Marker(opts={'map': gmap, 'position': position})
         maps.event.addListener(marker, 'click', 'toggleinfo')
-        tmpl = Template("""{% load oembed_tags %}
-                  {% oembed 480x360 %}{{ o.media_url }}{% endoembed %}""")
+        tmpl = Template("""{% load oembed_tags %}<div>
+                  {% oembed 480x360 %}{{ o.media_url }}{% endoembed %}</div>""")
         iw = maps.InfoWindow(opts={'content': tmpl.render(Context({'o': o}))})
         iw.open(gmap, marker)
     fmap = MapForm(initial={'map': gmap})

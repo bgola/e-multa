@@ -1,0 +1,75 @@
+* { margin: 0px; padding: 0px; }
+html, body {width: 100%; height: 100%}
+
+body {
+	background-color: #fff;
+	color: #111;
+	font-size: 9pt;
+	font-family: "trebuchet ms", helvetica, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "trebuchet ms", helvetica, sans-serif;
+	letter-spacing: -1px;
+}
+
+a, a:hover, a:visited { 
+        text-decoration:none; 
+} 
+
+p {
+line-height: 1.8em;
+}
+
+li.input input, li.input select {
+        border: solid 1px #C1C1C1;
+        font-size: 1.2em;
+        padding: 0.25em 0.25em 0.25em 0.25em;
+	border-radius: 5px;
+	width: 320px;
+}
+
+li.input select {
+	width: 330px;
+}
+
+ul.form {
+	position: relative;
+	width: 570px;
+	margin-bottom: 10px;
+}
+
+li.input {
+	width: 340px;
+	margin: 0 0 8px 0;
+	padding-left: 6px;
+}
+
+.errorlist {
+  border: 1px solid #c93;
+  padding: 2px 30px;
+  background-color: #ffc;
+  color: #c55;
+  list-style-image: url('../imgs/icon_error.gif') ;
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.hint {
+  display:none;
+  position: absolute;
+  right: 0px;
+  width: 200px;
+  margin-top: -10px;
+  border: 1px solid #c93;
+  padding: 10px 12px;
+  background-color: #ffc;
+  border-radius: 10px;
+
+}
+
+.clear {
+	width: 0px;
+	height: 0px;
+	clear: both;
+}

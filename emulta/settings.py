@@ -30,7 +30,7 @@ LANGUAGE_CODE = 'pt-br'
 SITE_ID = 1
 
 USE_I18N = True
-USE_L10N = True
+USE_L10N = False
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, "site_media/media")
 STATIC_ROOT = os.path.join(PROJECT_PATH, os.pardir, "site_media/static")
@@ -109,6 +109,9 @@ LOGGING = {
     }
 }
 
+DATETIME_INPUT_FORMATS = ("%m/%d/%Y %I:%M %p" , '%Y-%m-%d %H:%M:%S', '%Y-%m-%d %H:%M', '%Y-%m-%d',
+    '%m/%d/%Y %H:%M:%S', '%m/%d/%Y %H:%M', '%m/%d/%Y',
+    '%m/%d/%y %H:%M:%S', '%m/%d/%y %H:%M', '%m/%d/%y')
 
 try:
     from local_settings import *

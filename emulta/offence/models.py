@@ -1,6 +1,8 @@
 # coding: utf-8
 from django.db import models
 
+from datetime import datetime
+
 VEHICLE_TYPES = (
         ('Caminhao', u'Caminhão'),
         ('Carro', u'Carro'),
@@ -11,6 +13,7 @@ VEHICLE_TYPES = (
     )
 
 class Offence(models.Model):
+    timestamp = models.DateTimeField(u"Data", default=datetime.now())
     license_plate = models.CharField(u"Placa do veículo", max_length=8)
     media_url = models.URLField(u"Endereço da foto ou video")
     vehicle_type = models.CharField(u"Tipo de veículo", max_length=10, choices=VEHICLE_TYPES)
