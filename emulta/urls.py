@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'emulta.views.home'),
-
+    
+    url(r'^offence/', include('offence.urls')),
     url(r'^confirm_email/(\w+)/$', 'emailconfirmation.views.confirm_email'),
     url(r'^admin/', include(admin.site.urls)),
 )

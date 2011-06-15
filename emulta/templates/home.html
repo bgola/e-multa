@@ -3,10 +3,12 @@
 
 {% block middle %}
 
-{% oembed %}
-<p>teste</p>
+<form method='post' action="{% url offence_submit %}">
+{% csrf_token %}
+{{ form.as_p }}
+{{ form.media.js }}
 
-http://www.youtube.com/watch?v=kkviQ41u0eQ
-{% endoembed %}
+<input type='submit' value='Enviar' />
+</form>
 
 {% endblock %}
