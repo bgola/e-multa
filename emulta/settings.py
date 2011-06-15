@@ -33,10 +33,10 @@ USE_I18N = False
 USE_L10N = True
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, "media")
-MEDIA_URL = '/site_media/media/'
 STATIC_ROOT = os.path.join(PROJECT_PATH, os.pardir, "static")
-STATIC_URL = '/site_media/static/'
-ADMIN_MEDIA_PREFIX = '/site_media/static/admin/'
+#MEDIA_URL = '/site_media/media/'
+#STATIC_URL = '/site_media/static/'
+#ADMIN_MEDIA_PREFIX = '/site_media/static/admin/'
 
 STATICFILES_DIRS = (os.path.join(PROJECT_PATH, "static"),)
 
