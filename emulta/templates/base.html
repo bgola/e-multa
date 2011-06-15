@@ -1,0 +1,21 @@
+<!DOCTYPE HTML> <!-- /* vim: set filetype=html : */ -->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <title>E-Multa - {% block title %}home{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" title="Red" href="{{ STATIC_URL }}/css/emulta.css" />
+    {% block extra_style %}{% endblock %}
+    {% block extra_scripts %}{% endblock %}
+  </head>
+  <body>
+    <div id="maincontainer">
+      {% include 'header.html' %}
+      
+      <div id="middle">
+        {% block middle %} {% endblock %}
+      </div>
+
+      {% include 'footer.html' %}
+    </div>
+  </body>
+</html>

@@ -4,8 +4,9 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('emulta.views',
-    url(r'^$', 'home'),
+urlpatterns = patterns('',
+    url(r'^$', 'emulta.views.home'),
 
+    url(r'^confirm_email/(\w+)/$', 'emailconfirmation.views.confirm_email'),
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -29,7 +29,7 @@ LANGUAGE_CODE = 'pt-br'
 
 SITE_ID = 1
 
-USE_I18N = False
+USE_I18N = True
 USE_L10N = True
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, os.pardir, "site_media/media")
@@ -66,9 +66,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'emulta.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -79,7 +77,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'oembed',
+    'south',
+    'emailconfirmation',
+    # emulta apps
+    'offence',
 )
+
+EMAIL_CONFIRMATION_DAYS = 2
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
